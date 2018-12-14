@@ -1,2 +1,18 @@
 <!--pages/homeSelect/homeSelect.wxml-->
-<text>home-select</text>
+<template name="module">
+  <view data-index="{{index}}" class="item_wrapper" bindtap="handletap">
+  {{index}}
+    <view class="icon icon_{{item.name}}"></view>
+    <view class="text_box">
+      <view class="upper">{{item.text}}</view>
+      <view class="lower">{{item.text_en}}</view>
+    </view>
+    <icon size="20" type="success" color="#eee" class="check"></icon>
+  </view>
+</template>
+
+
+<view class="title">您关注的模块</view>
+<block wx:for="{{module_list}}" wx:key="item.name">
+  <template is="module" data="{{item}}"></template>
+</block>
