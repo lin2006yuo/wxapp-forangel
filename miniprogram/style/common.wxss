@@ -1,0 +1,4 @@
+.loginbtn {
+  color: #716e77;
+  font-size: 32rpx;
+}
