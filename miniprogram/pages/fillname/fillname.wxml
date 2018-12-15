@@ -1,0 +1,23 @@
+<!--pages/fillname/fillname.wxml-->
+<view>
+ <view class="formItem">
+  <view class="form_label">宝宝名字：</view>
+  <view class="inputControl_inline">
+    <input placeholder-class="holder_class" class="form_input" placeholder='请输入宝宝名字'></input>
+  </view>
+ </view>
+ <view class="formItem">
+  <view class="form_label">宝宝生日：</view>
+  <view class="inputControl_inline">
+    <picker
+      mode="date"
+      value="{{date}}"
+      start="2015-09-01"
+      end="2017-09-01"
+      bindchange="bindDateChange"
+    >
+      <view class="picker"> 当前选择: {{date}} </view>
+    </picker>
+  </view>
+ </view>
+</view>

@@ -10,22 +10,26 @@ Page({
       {
         name: 'hunli',
         text: '婚礼',
-        text_en: 'Wedding'
+        text_en: 'Wedding',
+        checked: false
       },
       {
         name: 'yuer',
         text: '育儿',
-        text_en: 'Parenting'
+        text_en: 'Parenting',
+        checked: true
       },
       {
         name: 'youjiao',
         text: '幼教',
-        text_en: 'Education'
+        text_en: 'Education',
+        checked: false
       },
       {
         name: 'yunyu',
         text: '孕育',
-        text_en: 'Inoculation'
+        text_en: 'Inoculation',
+        checked: false
       }
     ]
   },
@@ -36,7 +40,24 @@ Page({
   onLoad: function (options) {
     console.log(app)
   },
+
+  /**
+   * methods
+   */
   handletap(e) {
-    console.log(e)
+    const index = e.currentTarget.dataset.index
+    let checkStatus = `module_list[${index}].checked`
+    this.setData({
+      [checkStatus]: !this.data.module_list[index].checked
+    })
+  },
+  nextHandle() {
+    const checkedList = this.data.module_list.filter(item => {
+      return item.checked === true
+    })
+    app.checkedList = checkedList
+    wx.navigateTo({
+      url: '../../pages/fillname/fillname',
+    })
   }
 })

@@ -1,6 +1,7 @@
 {
 
   "pages": [
+    "pages/fillname/fillname",
     "pages/homeSelect/homeSelect",
     "pages/index/index"
   ],
